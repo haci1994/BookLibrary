@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|c:\\users\\mmzad\\desktop\\m.haji - homework\\booklibrary\\booklibrary\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|solutionrelative:booklibrary\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|c:\\users\\mmzad\\desktop\\m.haji - homework\\booklibrary\\booklibrary\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|solutionrelative:booklibrary\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|c:\\users\\mmzad\\desktop\\m.haji - homework\\booklibrary\\booklibrary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|solutionrelative:booklibrary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|c:\\users\\mmzad\\desktop\\m.haji - homework\\booklibrary\\booklibrary\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31E0A891-9D03-4EBD-9F1C-7227673150A5}|BookLibrary\\BookLibrary.csproj|solutionrelative:booklibrary\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\User.cs",
+              "RelativeDocumentMoniker": "BookLibrary\\User.cs",
+              "ToolTip": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\User.cs",
+              "RelativeToolTip": "BookLibrary\\User.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwCYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T22:30:31.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Book.cs",
+              "RelativeDocumentMoniker": "BookLibrary\\Book.cs",
+              "ToolTip": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Book.cs",
+              "RelativeToolTip": "BookLibrary\\Book.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAWwBsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T22:24:58.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Library.cs",
+              "DocumentMoniker": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Library.cs",
+              "RelativeDocumentMoniker": "BookLibrary\\Library.cs",
+              "ToolTip": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Library.cs",
+              "RelativeToolTip": "BookLibrary\\Library.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T22:16:26.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Program.cs",
+              "RelativeDocumentMoniker": "BookLibrary\\Program.cs",
+              "ToolTip": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\Program.cs",
+              "RelativeToolTip": "BookLibrary\\Program.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAEcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T21:29:42.355Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
