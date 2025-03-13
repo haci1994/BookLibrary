@@ -23,6 +23,11 @@
             IsAvailable = false;
         }
 
+        public void ChangeIsAvailableToTrue()
+        {
+            IsAvailable = true;
+        }
+
         public string GetWhoTookName()
         {
             if(WhoTook == null || IsAvailable == true)

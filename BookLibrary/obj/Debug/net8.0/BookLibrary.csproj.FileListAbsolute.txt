@@ -12,3 +12,18 @@ C:\Users\mmzad\Desktop\M.Haji - Homework\BookLibrary\BookLibrary\obj\Debug\net8.
 C:\Users\mmzad\Desktop\M.Haji - Homework\BookLibrary\BookLibrary\obj\Debug\net8.0\BookLibrary.pdb
 C:\Users\mmzad\Desktop\M.Haji - Homework\BookLibrary\BookLibrary\obj\Debug\net8.0\BookLibrary.genruntimeconfig.cache
 C:\Users\mmzad\Desktop\M.Haji - Homework\BookLibrary\BookLibrary\obj\Debug\net8.0\ref\BookLibrary.dll
+C:\Users\User\Desktop\developer\Book\BookLibrary\bin\Debug\net8.0\BookLibrary.exe
+C:\Users\User\Desktop\developer\Book\BookLibrary\bin\Debug\net8.0\BookLibrary.deps.json
+C:\Users\User\Desktop\developer\Book\BookLibrary\bin\Debug\net8.0\BookLibrary.runtimeconfig.json
+C:\Users\User\Desktop\developer\Book\BookLibrary\bin\Debug\net8.0\BookLibrary.dll
+C:\Users\User\Desktop\developer\Book\BookLibrary\bin\Debug\net8.0\BookLibrary.pdb
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.AssemblyInfo.cs
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.sourcelink.json
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.dll
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\refint\BookLibrary.dll
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.pdb
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\BookLibrary.genruntimeconfig.cache
+C:\Users\User\Desktop\developer\Book\BookLibrary\obj\Debug\net8.0\ref\BookLibrary.dll

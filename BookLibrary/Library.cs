@@ -2,18 +2,19 @@
 {
     public class Library
     {
-        private int _size = 2;
+        private int _size = 3;
         private List<Book> libraryList = new List<Book>(4);
 
         public Library()
         {
-            libraryList.Add(new Book("White Fang", "V.Hugo", 1001));
+            libraryList.Add(new Book("White Fang", "Jack London", 1001));
             libraryList.Add(new Book("Sonuncu olen umidlerdir", "Varis", 1002));
+            libraryList.Add(new Book("Sefiller", "V. Hugo", 1003));
         }
 
         public void ShowAll()
         {
-            Console.WriteLine(new string('-', 70));
+            Console.WriteLine(new string('*', 70));
             Console.WriteLine($"{"ID",-5}{"Title",-25}{"Author",-15}{"Availablility",-15}{"WhoTook",-15}");
 
             for (int i = 0; i < _size; i++)
@@ -31,7 +32,7 @@
                 Console.WriteLine(new string('-', 70));
                 Console.WriteLine($"{item.Id,-5}{item.Title,-25}{item.Author,-15}{availabilityMark,-15}{TookerName,-15}");
             }
-            Console.WriteLine(new string('-', 70));
+            Console.WriteLine(new string('*', 70));
         }
 
         public void AddBook()
@@ -50,7 +51,7 @@
 
             #region //ID input 
 
-            Console.WriteLine("Enter an ID for book:");
+            Console.WriteLine("Enter an ID for book (enter 0 to get back to menu):");
             do
             {
                 if (!int.TryParse(Console.ReadLine(), out id))
@@ -59,6 +60,8 @@
                     isCorrectId = false;
                     continue;
                 }
+
+                if (id == 0) return;
 
                 if (id < 1000 || id > 9999)
                 {
@@ -143,7 +146,9 @@
             bool isCorrectId = false;
             Book book;
 
-            Console.WriteLine("Enter book Id to take:");
+            ShowAll();
+
+            Console.WriteLine("Enter book Id to take (type 0 to get back to menu):");
 
             do
             {
@@ -154,21 +159,158 @@
                     continue;
                 }
 
+                if (id == 0) return;
+
                 foreach (Book item in libraryList)
                 {
                     if (item.Id == id && item.IsAvailable)
                     {
                         user.AddToMyList(item);
                         item.WhoTook = user;
+                        Console.WriteLine($"You took {item.Title}.");
+                        user.IncreaseBorrowlistSize();
+                        Console.WriteLine();
                         item.ChangeIsAvailableToFalse();
                         isCorrectId = true;
                         continue;
                     }
                 }
-                Console.WriteLine("Id not found or chosen Book is not available!");
+                if (!isCorrectId) Console.WriteLine("Id not found or chosen Book is not available!");
 
             } while (!isCorrectId);
 
+        }
+
+        public void Return(User user)
+        {
+            int id;
+            bool isCorrectId = false;
+            Book book;
+            List<Book> bookList = user.UserList();
+            int sizeOfUserList = user.Size;
+
+            user.ShowUserStaff();
+
+            Console.WriteLine("Enter book Id to return (type 0 to get back to menu):");
+
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out id))
+                {
+                    Console.WriteLine("Wrong format for an ID (try an integer from List)!");
+                    isCorrectId = false;
+                    continue;
+                }
+
+                if (id == 0) return;
+
+                for (int i = 0; i < sizeOfUserList; i++)
+                {
+                    Book item = bookList[i];
+                    if (item.Id == id)
+                    {
+                        user.RemoveFromUserList(item);
+                        item.WhoTook = null;
+                        Console.WriteLine($"You returned {item.Title}.");
+
+                        Console.WriteLine();
+                        item.ChangeIsAvailableToTrue();
+                        isCorrectId = true;
+                        continue;
+                    }
+                }
+                if (!isCorrectId) Console.WriteLine("Id not found or chosen Book is not available!");
+
+
+
+            } while (!isCorrectId);
+        }
+
+        public void Remove()
+        {
+            int id;
+            bool isCorrectId = false;
+            Book book;
+
+            ShowAll();
+
+            Console.WriteLine("Enter book Id to remove (type 0 to get back to menu):");
+
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out id))
+                {
+                    Console.WriteLine("Wrong format for an ID (try an integer from List)!");
+                    isCorrectId = false;
+                    continue;
+                }
+
+                if (id == 0) return;
+
+                for (int i = 0; i < _size; i++)
+                {
+                    Book item = libraryList[i];
+
+                    if (item.Id == id && item.IsAvailable)
+                    {
+                        Console.WriteLine($"{item.Title} removed from list.");
+                        libraryList.Remove(item);
+                        _size--;
+                        isCorrectId = true;
+                        break;
+                    }
+
+                    if (item.Id == id && !item.IsAvailable)
+                    {
+                        Console.WriteLine($"{item.Title} borrowed by {item.GetWhoTookName()}, please get back then try to remove the book!!!");
+                        isCorrectId = true;
+                        break;
+                    }
+                }
+
+                if (!isCorrectId) Console.WriteLine("Id not found!");
+
+            } while (!isCorrectId);
+        }
+
+        public void FindBookById()
+        {
+            int id;
+            bool isCorrectId = false;
+            Book book;
+
+            Console.WriteLine("Search book ID (type 0 to get back to menu):");
+
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out id))
+                {
+                    Console.WriteLine("Wrong format for an ID (try an integer from List)!");
+                    isCorrectId = false;
+                    continue;
+                }
+
+                if (id == 0) return;
+
+                for (int i = 0; i < _size; i++)
+                {
+                    Book item = libraryList[i];
+                    string msg = item.IsAvailable ? "Available" : "Taken";
+
+                    if (item.Id == id)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(new string('*', 30));
+                        Console.WriteLine($"{id} FOUND:\n{new string('-', 30)}\n{item.Title} - {item.Author} - {msg}");
+                        Console.WriteLine(new string('*', 30));
+                        isCorrectId = true;
+                        break;
+                    }                    
+                }
+
+                if (!isCorrectId) Console.WriteLine("Id not found!");
+
+            } while (!isCorrectId);
         }
     }
 }

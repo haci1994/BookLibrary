@@ -26,13 +26,19 @@ namespace BookLibrary
                 do
                 {
                     loggedInUser = users.GetUser();
-                    if (loggedInUser != null) loggedIn = true;
+                    if (loggedInUser != null)
+                    {
+                        loggedIn = true;
+                        Console.Clear();
+                    }
 
                 } while (!loggedIn);
 
                 do
                 {
-                    Console.WriteLine("Enter Command");
+                    Console.WriteLine();
+                    Console.WriteLine("Enter Command from menu:");
+                    Console.WriteLine();
                     Console.WriteLine("1 - Add a book to library");
                     Console.WriteLine("2 - View all books in library");
                     Console.WriteLine("3 - Find a book by ID");
@@ -41,38 +47,65 @@ namespace BookLibrary
                     Console.WriteLine("6 - Remove a book");
                     Console.WriteLine("7 - Log out.");
                     Console.WriteLine("8 - Exit.");
+                    Console.WriteLine("9 - Show my stuff (bonus)");
 
-                    int command = int.Parse(Console.ReadLine());
+                    int command;
+
+                    if (!int.TryParse(Console.ReadLine(), out command))
+                    {
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine("Choose from menu");
+                        Console.WriteLine();
+                        continue;
+                    }
 
                     switch (command)
                     {
                         case 1:
+                            Console.Clear();
                             library.AddBook();
-                            break;
-                        case 2:
                             library.ShowAll();
                             break;
+                        case 2:
+                            Console.Clear();
+                            library.ShowAll();
+                            break;
+                        case 3:
+                            Console.Clear();
+                            library.FindBookById();
+                            break;
                         case 4:
+                            Console.Clear();
                             library.Take(loggedInUser);
                             break;
+                        case 5:
+                            Console.Clear();
+                            library.Return(loggedInUser);
+                            break;
+                        case 6:
+                            Console.Clear();
+                            library.Remove();
+                            break;
                         case 7:
+                            Console.Clear();
                             loggedIn = false;
                             loggedInUser = null;
                             break;
                         case 8:
+                            Console.Clear();
                             Environment.Exit(0);
+                            break;
+                        case 9:
+                            Console.Clear();
+                            loggedInUser.ShowUserStaff();
                             break;
                         default:
                             Console.WriteLine("Choose correct command!");
                             break;
                     }
-
-
                 } while (loggedIn);
             } while (!loggedIn);
-
-
-
         }
     }
 }

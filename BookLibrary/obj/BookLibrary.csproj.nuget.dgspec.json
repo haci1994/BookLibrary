@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {}
+    "C:\\Users\\User\\Desktop\\developer\\Book\\BookLibrary\\BookLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {
+    "C:\\Users\\User\\Desktop\\developer\\Book\\BookLibrary\\BookLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\developer\\Book\\BookLibrary\\BookLibrary.csproj",
         "projectName": "BookLibrary",
-        "projectPath": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
-        "packagesPath": "C:\\Users\\mmzad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mmzad\\Desktop\\M.Haji - Homework\\BookLibrary\\BookLibrary\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\developer\\Book\\BookLibrary\\BookLibrary.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\developer\\Book\\BookLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mmzad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
