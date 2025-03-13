@@ -29,6 +29,7 @@ namespace BookLibrary
         public void AddToMyList(Book book)
         {
             _rentedList.Add(book);
+            _size++;    
         }
 
         public void ShowUserStaff()

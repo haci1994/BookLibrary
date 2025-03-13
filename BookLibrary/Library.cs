@@ -168,7 +168,7 @@
                         user.AddToMyList(item);
                         item.WhoTook = user;
                         Console.WriteLine($"You took {item.Title}.");
-                        user.IncreaseBorrowlistSize();
+                        //user.IncreaseBorrowlistSize();
                         Console.WriteLine();
                         item.ChangeIsAvailableToFalse();
                         isCorrectId = true;
