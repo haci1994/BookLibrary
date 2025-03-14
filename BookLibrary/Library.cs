@@ -84,7 +84,7 @@
                     {
                         Console.WriteLine("Duplicate value for ID, try different number!");
                         isCorrectId = false;
-                        continue;
+                        break;
                     }
                     else
                     {
