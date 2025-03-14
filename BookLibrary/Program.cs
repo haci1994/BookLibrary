@@ -47,9 +47,16 @@ namespace BookLibrary
                     Console.WriteLine("6 - Remove a book");
                     Console.WriteLine("7 - Log out.");
                     Console.WriteLine("8 - Exit.");
-                    Console.WriteLine("9 - Show my stuff (bonus)");
+                    Console.WriteLine("9 - Show my stuff (my bonus)");
+                    Console.WriteLine("10 - Show all available books (bonus)");
+                    Console.WriteLine("11 - Show all borrowed books (bonus)");
+                    Console.WriteLine("12 - Available and borrowed books count (bonus)");
+                    Console.WriteLine("13 - Search by Title or Author (bonus)");
 
                     int command;
+
+                    Console.WriteLine();
+                    Console.Write("Your command: ");
 
                     if (!int.TryParse(Console.ReadLine(), out command))
                     {
@@ -100,6 +107,23 @@ namespace BookLibrary
                             Console.Clear();
                             loggedInUser.ShowUserStaff();
                             break;
+                        case 10:
+                            Console.Clear();
+                            library.AllAvailable();
+                            break;
+                        case 11:
+                            Console.Clear();
+                            library.AllBorrowed();
+                            break;
+                        case 12:
+                            Console.Clear();
+                            library.StatisticsCount();
+                            break;
+                        case 13:
+                            Console.Clear();
+                            library.Search();
+                            break;
+
                         default:
                             Console.WriteLine("Choose correct command!");
                             break;

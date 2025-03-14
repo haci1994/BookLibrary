@@ -4,14 +4,22 @@
     {
         private int _size = 3;
         private List<Book> libraryList = new List<Book>(4);
+        private int _availableCount = 3;
+        private int _borrowedCount = 0;
 
+        public void StatisticsCount()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Borrowed book count is {_borrowedCount}");
+            Console.WriteLine($"Available book count is {_availableCount}");
+            Console.WriteLine();
+        }
         public Library()
         {
             libraryList.Add(new Book("White Fang", "Jack London", 1001));
             libraryList.Add(new Book("Sonuncu olen umidlerdir", "Varis", 1002));
             libraryList.Add(new Book("Sefiller", "V. Hugo", 1003));
         }
-
         public void ShowAll()
         {
             Console.WriteLine(new string('*', 70));
@@ -34,7 +42,6 @@
             }
             Console.WriteLine(new string('*', 70));
         }
-
         public void AddBook()
         {
             bool isCorrectId = false;
@@ -44,6 +51,7 @@
             string title;
             string author;
             int id;
+            _availableCount++;
 
             Console.WriteLine();
             Console.WriteLine("<ADDING A BOOK>");
@@ -139,12 +147,13 @@
             libraryList.Add(newBook);
             _size++;
         }
-
         public void Take(User user)
         {
             int id;
             bool isCorrectId = false;
             Book book;
+            _availableCount--;
+            _borrowedCount++;
 
             ShowAll();
 
@@ -180,13 +189,14 @@
             } while (!isCorrectId);
 
         }
-
         public void Return(User user)
         {
             int id;
             bool isCorrectId = false;
-            Book book;
-            List<Book> bookList = user.UserList();
+            _availableCount++;
+            _borrowedCount--;
+
+            var bookList = user.UserList();
             int sizeOfUserList = user.Size;
 
             user.ShowUserStaff();
@@ -216,7 +226,7 @@
                         Console.WriteLine();
                         item.ChangeIsAvailableToTrue();
                         isCorrectId = true;
-                        continue;
+                        break;
                     }
                 }
                 if (!isCorrectId) Console.WriteLine("Id not found or chosen Book is not available!");
@@ -225,12 +235,12 @@
 
             } while (!isCorrectId);
         }
-
         public void Remove()
         {
             int id;
             bool isCorrectId = false;
             Book book;
+            _availableCount--;
 
             ShowAll();
 
@@ -272,7 +282,6 @@
 
             } while (!isCorrectId);
         }
-
         public void FindBookById()
         {
             int id;
@@ -305,12 +314,127 @@
                         Console.WriteLine(new string('*', 30));
                         isCorrectId = true;
                         break;
-                    }                    
+                    }
                 }
 
                 if (!isCorrectId) Console.WriteLine("Id not found!");
 
             } while (!isCorrectId);
+        }
+        public void AllAvailable()
+        {
+            if (_size == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Library is empty");
+                Console.WriteLine();
+                return;
+            }
+            Console.WriteLine(new string('-', 70));
+            Console.WriteLine($"{"ID",-5}{"Title",-25}{"Author",-15}{"Availablility",-15}{"WhoTook",-15}");
+
+            for (int i = 0; i < _size; i++)
+            {
+                Book item = libraryList[i];
+
+                string availabilityMark;
+
+                if (item.IsAvailable)
+                {
+                    availabilityMark = "Available";
+                }
+                else { availabilityMark = "Taken"; }
+
+                if (item.IsAvailable)
+                {
+                    Console.WriteLine(new string('-', 70));
+                    Console.WriteLine($"{item.Id,-5}{item.Title,-25}{item.Author,-15}{availabilityMark,-15}{item.GetWhoTookName(),-15}");
+                }
+
+            }
+            Console.WriteLine(new string('-', 70));
+
+        }
+        public void AllBorrowed()
+        {
+            if (_size == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Library is empty");
+                Console.WriteLine();
+                return;
+            }
+            Console.WriteLine(new string('-', 70));
+            Console.WriteLine($"{"ID",-5}{"Title",-25}{"Author",-15}{"Availablility",-15}{"WhoTook",-15}");
+
+            for (int i = 0; i < _size; i++)
+            {
+                Book item = libraryList[i];
+
+                string availabilityMark;
+
+                if (item.IsAvailable)
+                {
+                    availabilityMark = "Available";
+                }
+                else { availabilityMark = "Taken"; }
+
+                if (!item.IsAvailable)
+                {
+                    Console.WriteLine(new string('-', 70));
+                    Console.WriteLine($"{item.Id,-5}{item.Title,-25}{item.Author,-15}{availabilityMark,-15}{item.GetWhoTookName(),-15}");
+                }
+
+            }
+            Console.WriteLine(new string('-', 70));
+
+        }
+        public void Search()
+        {
+            Console.WriteLine();
+            Console.Write("Search: ");
+            string key = Console.ReadLine();
+
+            int count = 0;
+
+            if (_size == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Library is empty");
+                Console.WriteLine();
+                return;
+            }
+
+            Console.WriteLine(new string('-', 70));
+            Console.WriteLine($"{"ID",-5}{"Title",-25}{"Author",-15}{"Availablility",-15}{"WhoTook",-15}");
+
+            for (int i = 0; i < _size; i++)
+            {
+                Book item = libraryList[i];
+
+                string availabilityMark;
+
+                if (item.IsAvailable)
+                {
+                    availabilityMark = "Available";
+                }
+                else { availabilityMark = "Taken"; }
+
+                if (item.Title.Contains(key, StringComparison.InvariantCultureIgnoreCase) || item.Author.Contains(key, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Console.WriteLine(new string('-', 70));
+                    Console.WriteLine($"{item.Id,-5}{item.Title,-25}{item.Author,-15}{availabilityMark,-15}{item.GetWhoTookName(),-15}");
+                    count++;
+                }
+                
+            }
+
+            if (count == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("No books found!");
+            }
+            Console.WriteLine(new string('-', 70));
         }
     }
 }
